@@ -1,0 +1,249 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Feb 15 04:11:54 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "account",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "blockchain_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "staked_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unstaked_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unstaking_info",
+                    "type": "unstaking[]"
+                },
+                {
+                    "name": "voting_power",
+                    "type": "uint64"
+                },
+                {
+                    "name": "last_voting_time",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "content",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "writer_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "write_time",
+                    "type": "uint32"
+                },
+                {
+                    "name": "donate_info",
+                    "type": "ct_donate[]"
+                },
+                {
+                    "name": "vote_info",
+                    "type": "ct_vote[]"
+                },
+                {
+                    "name": "up_voting_total",
+                    "type": "uint64"
+                },
+                {
+                    "name": "down_voting_total",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unproc_up_voting",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unproc_down_voting",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_amount",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "ct_donate",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "donate_total",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "ct_vote",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "proced_voting_total",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unproc_voting_total",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "globalvar",
+            "base": "",
+            "fields": [
+                {
+                    "name": "attr",
+                    "type": "uint32"
+                },
+                {
+                    "name": "value",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "reward",
+            "base": "",
+            "fields": [
+                {
+                    "name": "reward_type",
+                    "type": "uint32"
+                },
+                {
+                    "name": "reward_policy",
+                    "type": "rwpolicy[]"
+                },
+                {
+                    "name": "total_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "total_used_amount",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "rwpolicy",
+            "base": "",
+            "fields": [
+                {
+                    "name": "reward_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "limit_info",
+                    "type": "uint32"
+                },
+                {
+                    "name": "limit_type",
+                    "type": "uint8"
+                },
+                {
+                    "name": "total_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "used_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "status",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "name": "unstaking",
+            "base": "",
+            "fields": [
+                {
+                    "name": "unstake_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "unstaking_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "start_time",
+                    "type": "uint32"
+                },
+                {
+                    "name": "end_flag",
+                    "type": "uint8"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [],
+    "tables": [
+        {
+            "name": "account",
+            "type": "account",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "content",
+            "type": "content",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "globalvar",
+            "type": "globalvar",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "reward",
+            "type": "reward",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}
