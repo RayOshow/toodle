@@ -42,7 +42,7 @@ using std::vector;
  @brief  
 **/
 
-class [[eosio::contract]] reward_system : public eosio::contract {
+class [[eosio::contract]] toodle : public eosio::contract {
 
 	private:
 
@@ -56,7 +56,7 @@ class [[eosio::contract]] reward_system : public eosio::contract {
 
 		using contract::contract;
 
-		reward_system(name receiver, name code,  datastream<const char*> ds)
+		toodle(name receiver, name code,  datastream<const char*> ds)
 			: contract(receiver, code, ds ) 
 			,account_controller(_self)
 			,reward_controller(_self)
@@ -268,7 +268,7 @@ class [[eosio::contract]] reward_system : public eosio::contract {
 extern "C" { \
    void apply( uint64_t receiver, uint64_t code, uint64_t action ) { \
 	if(code == "todoskrtoken"_n.value && action == "transfer"_n.value) {\
-            eosio::execute_action(name(receiver), name(code), &reward_system::transfer);\
+            eosio::execute_action(name(receiver), name(code), &toodle::transfer);\
         }\
 	else {\
 			switch (action) {\
@@ -278,4 +278,4 @@ extern "C" { \
    } \
 } \
 
-EOSIO_DISPATCH_CUSTOM( reward_system, (signup)(transfer)(withdraw)(setbcid)(stake)(beginunstake)(endunstake)(vote)(chargevp)(registerct)(setrwdpt)(vtrewardproc)(donate)(eraseid)(erasect)(eraserwd))
+EOSIO_DISPATCH_CUSTOM(toodle, (signup)(transfer)(withdraw)(setbcid)(stake)(beginunstake)(endunstake)(vote)(chargevp)(registerct)(setrwdpt)(vtrewardproc)(donate)(eraseid)(erasect)(eraserwd))

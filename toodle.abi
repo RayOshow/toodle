@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Fri Feb 15 04:11:54 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sun Feb 17 23:24:52 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -32,6 +32,34 @@
                 },
                 {
                     "name": "last_voting_time",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "beginunstake",
+            "base": "",
+            "fields": [
+                {
+                    "name": "unstake_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "value",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "chargevp",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
                     "type": "uint32"
                 }
             ]
@@ -119,6 +147,78 @@
             ]
         },
         {
+            "name": "donate",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "donater_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "endunstake",
+            "base": "",
+            "fields": [
+                {
+                    "name": "unstake_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "erasect",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "erasegv",
+            "base": "",
+            "fields": [
+                {
+                    "name": "attr",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "eraseid",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "eraserwd",
+            "base": "",
+            "fields": [
+                {
+                    "name": "seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
             "name": "globalvar",
             "base": "",
             "fields": [
@@ -129,6 +229,20 @@
                 {
                     "name": "value",
                     "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "registerct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "ct_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "writer_seq",
+                    "type": "uint32"
                 }
             ]
         },
@@ -189,6 +303,92 @@
             ]
         },
         {
+            "name": "setbcid",
+            "base": "",
+            "fields": [
+                {
+                    "name": "blockchain_id",
+                    "type": "name"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "setrwdpt",
+            "base": "",
+            "fields": [
+                {
+                    "name": "reward_type",
+                    "type": "uint32"
+                },
+                {
+                    "name": "reward_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "limit_type",
+                    "type": "uint8"
+                },
+                {
+                    "name": "limit_info",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "signup",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "stake",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
             "name": "unstaking",
             "base": "",
             "fields": [
@@ -209,10 +409,137 @@
                     "type": "uint8"
                 }
             ]
+        },
+        {
+            "name": "vote",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "voter_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "voting_power",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "vtrewardproc",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "withdraw",
+            "base": "",
+            "fields": [
+                {
+                    "name": "requestor",
+                    "type": "name"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "value",
+                    "type": "asset"
+                }
+            ]
         }
     ],
     "types": [],
-    "actions": [],
+    "actions": [
+        {
+            "name": "beginunstake",
+            "type": "beginunstake",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "chargevp",
+            "type": "chargevp",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "donate",
+            "type": "donate",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "endunstake",
+            "type": "endunstake",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "erasect",
+            "type": "erasect",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "erasegv",
+            "type": "erasegv",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "eraseid",
+            "type": "eraseid",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "eraserwd",
+            "type": "eraserwd",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "registerct",
+            "type": "registerct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "setbcid",
+            "type": "setbcid",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "setrwdpt",
+            "type": "setrwdpt",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "signup",
+            "type": "signup",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "stake",
+            "type": "stake",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "vote",
+            "type": "vote",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "vtrewardproc",
+            "type": "vtrewardproc",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdraw",
+            "type": "withdraw",
+            "ricardian_contract": ""
+        }
+    ],
     "tables": [
         {
             "name": "account",
