@@ -21,16 +21,15 @@
 // Stake info
 #if TEST_MODE_ON
 	#define UNSTAKING_SEC (10*1*1)
-	#define MIN_CHARGE_SEC (10*1*1)
+	#define MIN_CHARGE_SEC (10*1*2)
 	#define MAX_CHARGE_SEC (60*1*2)
 #else
 	#define UNSTAKING_SEC (60*60*72)
-	#define MIN_CHARGE_SEC (60*60*1)
+	#define MIN_CHARGE_SEC (60*60*2)
 	#define MAX_CHARGE_SEC (60*60*24)
 #endif
 
 	
-
 // global variables 
 #define GLOBAL_VAR_ATTR_UNPROC_UP_VOTE_AMOUNT 1
 #define GLOBAL_VAR_ATTR_UNPROC_DOWN_VOTE_AMOUNT 2

@@ -1,5 +1,5 @@
 {
-    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Sun Feb 17 23:24:52 2019",
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Feb 18 08:17:55 2019",
     "version": "eosio::abi/1.1",
     "structs": [
         {
@@ -31,7 +31,7 @@
                     "type": "uint64"
                 },
                 {
-                    "name": "last_voting_time",
+                    "name": "last_voting_charging_time",
                     "type": "uint32"
                 }
             ]

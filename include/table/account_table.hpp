@@ -19,7 +19,8 @@ struct [[eosio::table , eosio::contract(CONTRACT_NAME)]] account {
 	std::vector<unstaking> unstaking_info;
 
 	uint64_t voting_power;
-	uint32_t last_voting_time;
+	//uint32_t last_voting_time;
+	uint32_t last_voting_charging_time;
 
 	uint32_t primary_key()const { return user_seq ;}
 
@@ -31,7 +32,8 @@ struct [[eosio::table , eosio::contract(CONTRACT_NAME)]] account {
 			 (unstaked_amount)
 			 (unstaking_info)
 			 (voting_power)
-			 (last_voting_time)
+			 //(last_voting_time)
+			 (last_voting_charging_time)
 			 )
 };
 

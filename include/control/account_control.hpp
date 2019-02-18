@@ -21,6 +21,7 @@ public:
 			// Get signup reward, if there exists.
 			row.unstaked_amount = reward_amount;//get_rewards(REWARD_TYPE_SIGNUP);
 			row.user_seq = user_seq;
+			row.last_voting_charging_time = 0;
 		});
 	}
 	
@@ -46,7 +47,7 @@ public:
 		auto it = acnts.find( user_seq );
 		eosio_assert( it != acnts.end(), ERROR_MSG_ID_NOT_EXIST);
 
-		acnts.modify(it, self, [&]( auto& row ) {														
+		acnts.modify(it, self, [&]( auto& row ){ 				
 			row.blockchain_id = blockchain_id.value;
 		});		
 	}

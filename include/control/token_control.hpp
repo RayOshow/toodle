@@ -35,7 +35,12 @@ public:
 		eosio_assert( it != acnts.end(), ERROR_MSG_ID_NOT_EXIST);
 
 		acnts.modify(it, self, [&]( auto& row ) {
-			eosio_assert( row.unstaked_amount >= quantity.amount , ERROR_MSG_ID_NOT_ENOUGH_TOKEN);										
+			eosio_assert( row.unstaked_amount >= quantity.amount , ERROR_MSG_ID_NOT_ENOUGH_TOKEN);
+	
+			if(row.last_voting_charging_time == 0) {
+				row.last_voting_charging_time = now();
+			}				
+					
 			row.unstaked_amount -= quantity.amount;
 			row.staked_amount += quantity.amount;
 			row.voting_power += (quantity.amount / MAIN_TOKEN_SYMBOL_DECIMAL_N);
@@ -130,18 +135,19 @@ public:
 		eosio_assert( it != acnts.end(), ERROR_MSG_ID_NOT_EXIST);
 		
 		acnts.modify(it, self, [&]( auto & row ) {		
-			uint32_t time_gap = now() - row.last_voting_time;
+			uint32_t time_gap = now() - row.last_voting_charging_time;
 			
 			eosio_assert(time_gap >= MIN_CHARGE_SEC, ERROR_MSG_VOTE_CHARGE_TIME_NOT_ENOUGH);
 			
 			// If time gap is over max time.
 			if(time_gap >= MAX_CHARGE_SEC) {
-				row.voting_power = row.unstaked_amount;
+				row.voting_power = row.staked_amount / MAIN_TOKEN_SYMBOL_DECIMAL_N;
+				row.last_voting_charging_time = now();	
 				return;
 			}
 			
-			row.voting_power += (row.unstaked_amount - row.voting_power) * time_gap / MAX_CHARGE_SEC;
-			row.last_voting_time = now();				
+			row.voting_power += ((row.staked_amount / MAIN_TOKEN_SYMBOL_DECIMAL_N) - row.voting_power) * time_gap / MAX_CHARGE_SEC;
+			row.last_voting_charging_time = now();				
 		});							
 	}
 	
@@ -159,7 +165,7 @@ public:
 		acnts.modify(it, self, [&]( auto & row ) {			
 			eosio_assert(spent_voting_power <= row.voting_power, ERROR_MSG_CONTENTS_NOT_ENOUGH_VOTING_POWER);
 			row.voting_power -= spent_voting_power;
-			row.last_voting_time = now();
+			//row.last_voting_time = now();
 			
 		});	
 		///////////////////////////////////////////////////////////////////////						
