@@ -1,0 +1,576 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT Mon Feb 18 08:17:55 2019",
+    "version": "eosio::abi/1.1",
+    "structs": [
+        {
+            "name": "account",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "blockchain_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "staked_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unstaked_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unstaking_info",
+                    "type": "unstaking[]"
+                },
+                {
+                    "name": "voting_power",
+                    "type": "uint64"
+                },
+                {
+                    "name": "last_voting_charging_time",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "beginunstake",
+            "base": "",
+            "fields": [
+                {
+                    "name": "unstake_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "value",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "chargevp",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "content",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "writer_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "write_time",
+                    "type": "uint32"
+                },
+                {
+                    "name": "donate_info",
+                    "type": "ct_donate[]"
+                },
+                {
+                    "name": "vote_info",
+                    "type": "ct_vote[]"
+                },
+                {
+                    "name": "up_voting_total",
+                    "type": "uint64"
+                },
+                {
+                    "name": "down_voting_total",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unproc_up_voting",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unproc_down_voting",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_amount",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "ct_donate",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "donate_total",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "ct_vote",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "proced_voting_total",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unproc_voting_total",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "donate",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "donater_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "endunstake",
+            "base": "",
+            "fields": [
+                {
+                    "name": "unstake_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "erasect",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "erasegv",
+            "base": "",
+            "fields": [
+                {
+                    "name": "attr",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "eraseid",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "eraserwd",
+            "base": "",
+            "fields": [
+                {
+                    "name": "seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "globalvar",
+            "base": "",
+            "fields": [
+                {
+                    "name": "attr",
+                    "type": "uint32"
+                },
+                {
+                    "name": "value",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "registerct",
+            "base": "",
+            "fields": [
+                {
+                    "name": "ct_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "writer_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "reward",
+            "base": "",
+            "fields": [
+                {
+                    "name": "reward_type",
+                    "type": "uint32"
+                },
+                {
+                    "name": "reward_policy",
+                    "type": "rwpolicy[]"
+                },
+                {
+                    "name": "total_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "total_used_amount",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "rwpolicy",
+            "base": "",
+            "fields": [
+                {
+                    "name": "reward_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "limit_info",
+                    "type": "uint32"
+                },
+                {
+                    "name": "limit_type",
+                    "type": "uint8"
+                },
+                {
+                    "name": "total_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "used_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "status",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "name": "setbcid",
+            "base": "",
+            "fields": [
+                {
+                    "name": "blockchain_id",
+                    "type": "name"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "setrwdpt",
+            "base": "",
+            "fields": [
+                {
+                    "name": "reward_type",
+                    "type": "uint32"
+                },
+                {
+                    "name": "reward_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "limit_type",
+                    "type": "uint8"
+                },
+                {
+                    "name": "limit_info",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "signup",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                }
+            ]
+        },
+        {
+            "name": "stake",
+            "base": "",
+            "fields": [
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "name": "transfer",
+            "base": "",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "unstaking",
+            "base": "",
+            "fields": [
+                {
+                    "name": "unstake_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "unstaking_amount",
+                    "type": "uint64"
+                },
+                {
+                    "name": "start_time",
+                    "type": "uint32"
+                },
+                {
+                    "name": "end_flag",
+                    "type": "uint8"
+                }
+            ]
+        },
+        {
+            "name": "vote",
+            "base": "",
+            "fields": [
+                {
+                    "name": "content_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "voter_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "voting_power",
+                    "type": "int64"
+                }
+            ]
+        },
+        {
+            "name": "vtrewardproc",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "withdraw",
+            "base": "",
+            "fields": [
+                {
+                    "name": "requestor",
+                    "type": "name"
+                },
+                {
+                    "name": "user_seq",
+                    "type": "uint32"
+                },
+                {
+                    "name": "value",
+                    "type": "asset"
+                }
+            ]
+        }
+    ],
+    "types": [],
+    "actions": [
+        {
+            "name": "beginunstake",
+            "type": "beginunstake",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "chargevp",
+            "type": "chargevp",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "donate",
+            "type": "donate",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "endunstake",
+            "type": "endunstake",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "erasect",
+            "type": "erasect",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "erasegv",
+            "type": "erasegv",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "eraseid",
+            "type": "eraseid",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "eraserwd",
+            "type": "eraserwd",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "registerct",
+            "type": "registerct",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "setbcid",
+            "type": "setbcid",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "setrwdpt",
+            "type": "setrwdpt",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "signup",
+            "type": "signup",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "stake",
+            "type": "stake",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "vote",
+            "type": "vote",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "vtrewardproc",
+            "type": "vtrewardproc",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdraw",
+            "type": "withdraw",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "account",
+            "type": "account",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "content",
+            "type": "content",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "globalvar",
+            "type": "globalvar",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        },
+        {
+            "name": "reward",
+            "type": "reward",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": [],
+    "abi_extensions": []
+}
